@@ -40,8 +40,8 @@ class Stack:
         :return: данные удаленного элемента
         """
         if self.items:
-            a = self.items[-1]
-            self.items.pop()
-            return a
+            last_item = self.items.pop()
+            self.top = self.items[-1] if self.items else None
+            return last_item
         else:
             raise IndexError("pop from empty list")
