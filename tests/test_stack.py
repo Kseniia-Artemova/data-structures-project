@@ -31,11 +31,13 @@ class TestNode(unittest.TestCase):
         stack.push("data2")
         self.assertEqual(len(stack.items), 2)
 
-        self.assertIsInstance(stack.pop(), Node)
+        self.assertEqual(stack.pop(), "data2")
         self.assertEqual(len(stack.items), 1)
+        self.assertEqual(stack.top.data, "data1")
         
-        self.assertIsInstance(stack.pop(), Node)
+        self.assertEqual(stack.pop(), "data1")
         self.assertEqual(stack.items, [])
+        self.assertIsNone(stack.top)
 
         with self.assertRaises(IndexError):
             stack.pop()
