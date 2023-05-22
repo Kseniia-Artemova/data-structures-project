@@ -20,6 +20,9 @@ class Node:
     def next_node(self, next_node):
         self.__next_node = next_node
 
+    def __str__(self):
+        return f"{self.data}"
+
 
 class Stack:
     """Класс для стека"""
@@ -41,6 +44,11 @@ class Stack:
     @property
     def top(self) -> Node | None:
         return self.__top
+
+    def __str__(self):
+        return "Объект стека. Список узлов:\n" + \
+                "\n".join([item.data for item in self.items]) + \
+                f"\nПоследний добавленный узел: {self.top}"
 
     def push(self, data: str) -> None:
         """
