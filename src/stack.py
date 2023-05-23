@@ -20,14 +20,14 @@ class Node:
     def next_node(self, next_node):
         self.__next_node = next_node
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.data}"
 
 
 class Stack:
     """Класс для стека"""
 
-    def __init__(self):
+    def __init__(self) -> None:
         """
         Конструктор класса Stack
 
@@ -45,10 +45,10 @@ class Stack:
     def top(self) -> Node | None:
         return self.__top
 
-    def __str__(self):
+    def __str__(self) -> str:
         return "Объект стека. Список узлов:\n" + \
-                "\n".join([item.data for item in self.items]) + \
-                f"\nПоследний добавленный узел: {self.top}"
+                "".join([item.data + "\n" for item in self.items]) + \
+                f"Последний добавленный узел: {self.top}"
 
     def push(self, data: str) -> None:
         """

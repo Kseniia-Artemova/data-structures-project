@@ -11,6 +11,9 @@ class TestNode(unittest.TestCase):
         self.assertEqual(node.data, "data")
         self.assertIsNone(node.next_node)
 
+
+class TestStack(unittest.TestCase):
+
     def test_data_Stack(self):
         stack = Stack()
         self.assertEqual(stack.items, [])
