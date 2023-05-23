@@ -20,6 +20,8 @@ class Node:
         self.__next_node = next_node
 
     def __str__(self) -> str:
+        """Возвращает строку data класса в формате строки"""
+
         return f"{self.data}"
 
 
@@ -71,7 +73,6 @@ class Queue:
 
             if self.head.next_node is None:
                 self.__tail = self.__head = None
-
             else:
                 self.__head = self.head.next_node
 
@@ -79,6 +80,7 @@ class Queue:
 
     def __str__(self) -> str:
         """Магический метод для строкового представления объекта"""
+
         if self.head is None:
             return ""
 
