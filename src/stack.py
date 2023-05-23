@@ -21,6 +21,8 @@ class Node:
         self.__next_node = next_node
 
     def __str__(self) -> str:
+        """Возвращает данные объекта класса в виде строки"""
+
         return f"{self.data}"
 
 

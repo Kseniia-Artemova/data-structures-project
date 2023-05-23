@@ -10,6 +10,7 @@ class TestNode(unittest.TestCase):
         node = Node("data")
         self.assertEqual(node.data, "data")
         self.assertIsNone(node.next_node)
+        self.assertEqual(str(node), "data")
 
 
 class TestStack(unittest.TestCase):
