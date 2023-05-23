@@ -17,7 +17,7 @@ class Node:
         return self.__next_node
 
     @next_node.setter
-    def next_node(self, next_node):
+    def next_node(self, next_node) -> None:
         self.__next_node = next_node
 
     def __str__(self) -> str:
@@ -71,7 +71,7 @@ class Stack:
 
         self.__top = node
 
-    def pop(self) -> str:
+    def pop(self) -> str | Exception:
         """
         Метод для удаления элемента с вершины стека и его возвращения
 

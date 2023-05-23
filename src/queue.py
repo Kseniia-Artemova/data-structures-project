@@ -16,7 +16,7 @@ class Node:
         return self.__next_node
 
     @next_node.setter
-    def next_node(self, next_node):
+    def next_node(self, next_node) -> None:
         self.__next_node = next_node
 
     def __str__(self) -> str:
@@ -58,7 +58,7 @@ class Queue:
 
         self.__tail = node
 
-    def dequeue(self) -> str:
+    def dequeue(self) -> str | Exception:
         """
         Метод для удаления элемента из очереди. Возвращает данные удаленного элемента
 
