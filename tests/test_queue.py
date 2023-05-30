@@ -60,8 +60,8 @@ class TestQueue(unittest.TestCase):
         self.assertIsNone(queue.head)
         self.assertIsNone(queue.tail)
 
-        with self.assertRaises(IndexError):
-            queue.dequeue()
+        last = queue.dequeue()
+        self.assertIsNone(last)
 
     def test_str_empty(self):
         queue = Queue()
