@@ -58,7 +58,7 @@ class Queue:
 
         self.__tail = node
 
-    def dequeue(self) -> str | Exception:
+    def dequeue(self) -> str | None:
         """
         Метод для удаления элемента из очереди. Возвращает данные удаленного элемента
 
@@ -66,7 +66,7 @@ class Queue:
         """
 
         if self.head is None:
-            raise IndexError("Очередь пуста")
+            return None
 
         else:
             node = self.head.data
