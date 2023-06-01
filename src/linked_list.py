@@ -29,7 +29,7 @@ class Node:
 class LinkedList:
     """Класс для односвязного списка"""
 
-    def __init__(self):
+    def __init__(self) -> None:
         """
         Конструктор класса LinkedList
 
@@ -86,7 +86,7 @@ class LinkedList:
 
         ll_string = ''
         while node:
-            ll_string += f'{str(node.data)} -> '
+            ll_string += f'{node.data} -> '
             node = node.next_node
 
         ll_string += 'None'
