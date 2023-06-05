@@ -73,5 +73,39 @@ class TestLinkedList(unittest.TestCase):
         expection = "{'id': 0} -> {'id': 1} -> {'id': 2} -> {'id': 3} -> {'id': 4} -> None"
         self.assertEqual(str(link_list), expection)
 
+    def test_to_list(self):
+        link_list = LinkedList()
+
+        link_list.insert_beginning({'id': 2})
+        link_list.insert_beginning({'id': 1})
+        link_list.insert_beginning({'id': 0})
+        link_list.insert_at_end({'id': 3})
+        link_list.insert_at_end({'id': 4})
+
+        self.assertEqual(len(link_list.to_list()), 5)
+        lst = [{'id': 0}, {'id': 1}, {'id': 2}, {'id': 3}, {'id': 4}]
+        self.assertEqual(link_list.to_list(), lst)
+
+    def test_get_data_by_id(self):
+        link_list = LinkedList()
+
+        link_list.insert_beginning({'id': 2})
+        link_list.insert_beginning({'id': 1})
+        link_list.insert_beginning({'id': 0})
+        link_list.insert_at_end({'id': 3})
+        link_list.insert_at_end({'id': 4})
+
+        self.assertEqual(link_list.get_data_by_id(0), {'id': 0})
+        self.assertEqual(link_list.get_data_by_id(3), {'id': 3})
+        self.assertIsNone(link_list.get_data_by_id(6))
+
+        link_list.insert_beginning({"data"})
+        self.assertRaises(TypeError, link_list.get_data_by_id(0))
+        link_list.insert_at_end({'id': "5"})
+        self.assertRaises(TypeError, link_list.get_data_by_id(5))
+        self.assertIsNone(link_list.get_data_by_id(5))
+
+
+
 
 
